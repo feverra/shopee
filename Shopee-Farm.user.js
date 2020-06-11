@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopee Farm Every 2 Hours
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://games.shopee.co.th/
@@ -10,6 +10,7 @@
 // ==/UserScript==
 
 (() => {
+    //test update
     'use strict';
     document.title = 'farm';
     var jqry = document.createElement('script');
