@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Shopee coin
+// @name         Shopee Coin
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://shopee.co.th/shopee-coins
-// @downloadURL  https://github.com/feverra/shopee/raw/master/ShopeeCoin.user.js
+// @downloadURL  https://github.com/feverra/shopee/raw/master/Shopee-Coin.user.js
 // @grant        none
 // ==/UserScript==
 
