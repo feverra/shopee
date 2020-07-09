@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Shopee hour
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  try to take over the world!
 // @author       You
-// @match        https://luckydraw.shopee.co.th/event/8905bbc3679ec3e6?scenario=1
+// @match        https://luckydraw.shopee.co.th/event/7766d3dee4a5551f?scenario=1
 // @downloadURL  https://github.com/feverra/shopee/raw/master/Shopee-Hour.user.js
 // @grant        none
 // ==/UserScript==
@@ -26,7 +26,7 @@
             if (count >= 1) {
                 $.ajax({
                     method: 'POST',
-                    url: 'https://luckydraw.shopee.co.th/api/v1/luckydraw/8905bbc3679ec3e6/',
+                    url: 'https://luckydraw.shopee.co.th/api/v1/luckydraw/7766d3dee4a5551f/',
                     success: function (data) {
                         console.log('done', data)
                     },
