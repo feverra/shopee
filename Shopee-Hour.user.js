@@ -13,7 +13,7 @@
     'use strict';
     setTimeout(() => {
         let str = document.getElementsByClassName('container pc')[0].children[0].textContent
-        str = str.replace('คุณเหลือสิทธิ์เล่นอีก  ', '')
+        str = str.replace('เล่นได้ ', '')
         str = str.replace(' ครั้ง', '')
         let count = parseInt(str)
         console.log(count)
