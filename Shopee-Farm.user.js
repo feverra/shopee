@@ -9,41 +9,41 @@
 // @grant        none
 // ==/UserScript==
 
-(()=> {
-    'use strict';
+(() => {
+    'use strict'
     document.title = 'farm'
     //window.str = ''
     var str = ""
     var jqry = document.createElement('script')
     jqry.src = "https://code.jquery.com/jquery-3.5.1.min.js"
     document.getElementsByTagName('head')[0].appendChild(jqry)
-    setInterval(()=>{
+    setInterval(() => {
         farm()
-    }, 7200000);
+    }, 7200000)
 
-    setTimeout(()=>{
-        $('body').append('<textarea id="txt" style="width: 100%;height: 100%"></textarea>');
+    setTimeout(() => {
+        $('body').append('<textarea id="txt" style="width: 100%height: 100%"></textarea>')
         console.log('ตั้งเวลา')
         echo('ตั้งเวลา')
         farm()
-    },3000)
-    setTimeout(()=>{
+    }, 3000)
+    setTimeout(() => {
         location.reload()
     }, 28800000)
-})();
-function echo(val = ''){
+})()
+function echo(val = '') {
     //window.str += "\n" + val
     //$('#txt').val(window.str)
     document.getElementById("txt").value += "\n" + val
 
 }
-function farm(){
+function farm() {
     /*$.get( "https://games.shopee.co.th/farm/api/friend/share_link/get", data => {
             console.log(data)
         })*/
 
-    $.get( "https://games.shopee.co.th/farm/api/orchard/context/get", data => {
-        //console.log(data);
+    $.get("https://games.shopee.co.th/farm/api/orchard/context/get", data => {
+        //console.log(data)
         var cropId = data.data.crops[0].id
         var resourceId = data.data.resources[0].id
         var water = data.data.resources[0].number
@@ -51,26 +51,26 @@ function farm(){
             "cropId": cropId,
             "resourceId": resourceId
         })
-        console.log('json', json);
-        console.log('water', water);
-        echo('มีน้ำเหลือ : ' + water);
-        if(water > 1){
+        console.log('json', json)
+        console.log('water', water)
+        echo('มีน้ำเหลือ : ' + water)
+        if (water > 1) {
             $.ajax({
                 type: "POST",
                 url: "https://games.shopee.co.th/farm/api/orchard/crop/water",
                 data: json,
-                contentType: "application/json; charset=utf-8",
+                contentType: "application/json charset=utf-8",
                 dataType: "json",
                 success: data => {
-                    console.log(data);
-                    console.log('รดน้ำ');
-                    echo('รดน้ำ');
+                    console.log(data)
+                    console.log('รดน้ำ')
+                    echo('รดน้ำ')
                 },
                 failure: errMsg => {
-                    console.log(errMsg);
-                    echo('รดไม่ได้อะ');
+                    console.log(errMsg)
+                    echo('รดไม่ได้อะ')
                 }
-            });
+            })
         }
 
     })

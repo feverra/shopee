@@ -10,14 +10,14 @@
 // ==/UserScript==
 
 (() => {
-    'use strict';
+    'use strict'
     var jqry = document.createElement('script')
     jqry.src = "https://dmama.pwa.co.th/mis/demo/Javascript/Bootstrap/jquery-3.2.1.min.js"
     document.getElementsByTagName('head')[0].appendChild(jqry)
 
     setTimeout(() => {
         let btnText = document.getElementsByTagName('button')[1].textContent
-        var x = btnText.indexOf("เช็คอินวันนี้");
+        var x = btnText.indexOf("เช็คอินวันนี้")
         if (x > -1) {
             console.log('ยังไม่รับ')
             $.ajax({
@@ -32,11 +32,11 @@
                 error: data => {
                     console.log('error')
                 }
-            });
+            })
             setTimeout(() => {
                 location.reload()
             }, 43200000)
         }
-    }, 2000);
+    }, 2000)
 
-})();
+})()

@@ -15,7 +15,7 @@
         let str = document.getElementsByClassName('container pc')[0].children[0].textContent
         //str = str.replace('เล่นได้ ', '')
         //str = str.replace(' ครั้ง', '')
-	str = str.replace(/[^0-9]/g, '')
+        str = str.replace(/[^0-9]/g, '')
         let count = parseInt(str)
         console.log(count)
         if (count == 0) {
@@ -40,7 +40,7 @@
                 }, 2000)
             }
         }
-        
+
     }, 2200)
 
 })()
