@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopee hour
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  try to take over the world!
 // @author       You
 // @match        https://luckydraw.shopee.co.th/event/7766d3dee4a5551f?scenario=1
