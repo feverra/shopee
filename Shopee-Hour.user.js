@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopee hour
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  try to take over the world!
 // @author       You
 // @match        https://luckydraw.shopee.co.th/event/7766d3dee4a5551f?scenario=1
@@ -13,8 +13,7 @@
     'use strict'
     setTimeout(() => {
         let str = document.getElementsByClassName('container pc')[0].children[0].textContent
-        //str = str.replace('เล่นได้ ', '')
-        //str = str.replace(' ครั้ง', '')
+        let id = window.location.pathname.split('/')[2]
         str = str.replace(/[^0-9]/g, '')
         let count = parseInt(str)
         console.log(count)
@@ -27,7 +26,7 @@
             if (count >= 1) {
                 $.ajax({
                     method: 'POST',
-                    url: 'https://luckydraw.shopee.co.th/api/v1/luckydraw/7766d3dee4a5551f/',
+                    url: `https://luckydraw.shopee.co.th/api/v1/luckydraw/${id}/`,
                     success: function (data) {
                         console.log('done', data)
                     },
@@ -40,7 +39,5 @@
                 }, 2000)
             }
         }
-
     }, 2200)
-
 })()
