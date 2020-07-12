@@ -10,15 +10,16 @@
 // ==/UserScript==
 
 (() => {
-    'use strict';
+    'use strict'
     setTimeout(() => {
         let str = document.getElementsByClassName('container pc')[0].children[0].textContent
-        str = str.replace('เล่นได้ ', '')
-        str = str.replace(' ครั้ง', '')
+        //str = str.replace('เล่นได้ ', '')
+        //str = str.replace(' ครั้ง', '')
+	str = str.replace(/[^0-9]/g, '')
         let count = parseInt(str)
         console.log(count)
         if (count == 0) {
-            console.log('ตั้งเวลา');
+            console.log('ตั้งเวลา')
             setTimeout(() => {
                 location.reload()
             }, 3600000)
@@ -33,13 +34,13 @@
                     error: function (data) {
                         console.log('error')
                     }
-                });
+                })
                 setTimeout(() => {
                     location.reload()
                 }, 2000)
             }
         }
         
-    }, 2200);
+    }, 2200)
 
-})();
+})()
