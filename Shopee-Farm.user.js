@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopee Farm Every 2 Hours
 // @namespace    http://tampermonkey.net/
-// @version      0.1.4
+// @version      0.1.5
 // @description  try to take over the world!
 // @author       You
 // @match        https://games.shopee.co.th/
@@ -12,7 +12,6 @@
 (() => {
     'use strict'
     document.title = 'farm'
-    var str = ""
     var jqry = document.createElement('script')
     jqry.src = "https://code.jquery.com/jquery-3.5.1.min.js"
     document.getElementsByTagName('head')[0].appendChild(jqry)
@@ -21,7 +20,7 @@
     }, 1800000)
 
     setTimeout(() => {
-        $('body').append('<textarea id="txt" style="width: 100%;height: 100%"></textarea>')
+        $('body').append('<textarea id="txt" style="width: 100%;height: 100%;"></textarea>')
         console.log('ตั้งเวลา')
         echo('ตั้งเวลา')
         farm()
