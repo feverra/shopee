@@ -21,7 +21,7 @@
     }, 1800000)
 
     setTimeout(() => {
-        $('body').append('<textarea id="txt" style="width: 100%height: 100%"></textarea>')
+        $('body').append('<textarea id="txt" style="width: 100%;height: 100%"></textarea>')
         console.log('ตั้งเวลา')
         echo('ตั้งเวลา')
         farm()
