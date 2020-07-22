@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://games.shopee.co.th/
-// downloadURL  https://github.com/feverra/shopee/raw/master/Shopee-Farm.user.js
+// @downloadURL  https://github.com/feverra/shopee/raw/master/Shopee-Farm.user.js
 // @grant        none
 // ==/UserScript==
 
