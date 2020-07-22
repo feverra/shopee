@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopee hour
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.8
 // @description  try to take over the world!
 // @author       You
 // @match        https://luckydraw.shopee.co.th/event/7766d3dee4a5551f?scenario=1
@@ -11,6 +11,13 @@
 
 (() => {
     'use strict'
+    //หาชม ต่อไป
+    let nextHour = new Date();
+    nextHour.setHours(nextHour.getHours() + 1)
+    nextHour.setMinutes('1')
+    let now = new Date()
+    let timeout = nextHour - now
+
     setTimeout(() => {
         let str = document.getElementsByClassName('container pc')[0].children[0].textContent
         let id = window.location.pathname.split('/')[2]
@@ -18,19 +25,19 @@
         let count = parseInt(str)
         console.log(count)
         if (count == 0) {
-            console.log('ตั้งเวลา')
+            console.log('ตั้งเวลา : ' + nextHour.toTimeString())
             setTimeout(() => {
                 location.reload()
-            }, 3600000)
+            }, timeout)
         } else {
-            if (count >= 1) {
+            if (count > 0) {
                 $.ajax({
                     method: 'POST',
                     url: `https://luckydraw.shopee.co.th/api/v1/luckydraw/${id}/`,
-                    success: function (data) {
+                    success: data => {
                         console.log('done', data)
                     },
-                    error: function (data) {
+                    error: data => {
                         console.log('error')
                     }
                 })
@@ -39,5 +46,10 @@
                 }, 2000)
             }
         }
-    }, 2200)
+    }, 2000)
+
+    //เผื่อค้าง
+    setTimeout(() => {
+        location.reload()
+    }, 4320000)
 })()
