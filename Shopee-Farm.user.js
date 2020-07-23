@@ -43,14 +43,14 @@ function farm() {
         var water = data.data.resources[0].number
         //เช็คสถานะ
         var state = data.data.crops[0].state
-        var json = JSON.stringify({
-            "cropId": cropId,
-            "resourceId": resourceId
-        })
         console.log('json', json)
         console.log('water', water)
         echo('มีน้ำเหลือ : ' + water)
         if (water > 0 && state < 100) {
+            var json = JSON.stringify({
+                "cropId": cropId,
+                "resourceId": resourceId
+            })
             $.ajax({
                 type: "POST",
                 url: "https://games.shopee.co.th/farm/api/orchard/crop/water",
