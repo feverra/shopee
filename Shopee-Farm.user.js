@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name         Shopee Farm Every 2 Hours
 // @namespace    http://tampermonkey.net/
-// @version      0.1.5
+// @version      0.1.6
 // @description  try to take over the world!
 // @author       You
 // @match        https://games.shopee.co.th/
@@ -41,6 +41,8 @@ function farm() {
         var cropId = data.data.crops[0].id
         var resourceId = data.data.resources[0].id
         var water = data.data.resources[0].number
+        //เช็คสถานะ
+        var state = data.data.crops[0].state
         var json = JSON.stringify({
             "cropId": cropId,
             "resourceId": resourceId
@@ -48,7 +50,7 @@ function farm() {
         console.log('json', json)
         console.log('water', water)
         echo('มีน้ำเหลือ : ' + water)
-        if (water > 0) {
+        if (water > 0 || state > 100) {
             $.ajax({
                 type: "POST",
                 url: "https://games.shopee.co.th/farm/api/orchard/crop/water",
