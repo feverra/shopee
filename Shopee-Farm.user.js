@@ -50,7 +50,7 @@ function farm() {
         console.log('json', json)
         console.log('water', water)
         echo('มีน้ำเหลือ : ' + water)
-        if (water > 0 || state > 100) {
+        if (water > 0 && state < 100) {
             $.ajax({
                 type: "POST",
                 url: "https://games.shopee.co.th/farm/api/orchard/crop/water",
