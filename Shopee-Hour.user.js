@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Shopee hour
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      0.9.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://luckydraw.shopee.co.th/event/692911fdc056c01d?smtt=1.330&scenario=1
+// @match        https://games.shopee.co.th/luckydraw/box/activity/a7d936d0ac5e9a95?scenario=1
 // @downloadURL  https://github.com/feverra/shopee/raw/master/Shopee-Hour.user.js
 // @grant        none
 // ==/UserScript==
